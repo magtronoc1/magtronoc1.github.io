@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="警察张津瑜 - 专注于人物纪实与公共安全话题的资讯平台，提供相关人物背景梳理、公共安全意识普及及理性讨论引导。">
+    <meta name="keywords" content="警察张津瑜,人物纪实,公共安全,理性讨论,网络舆情">
+    <title>警察张津瑜-人物纪实与公共安全话题资讯平台</title>
+    <style>
+        :root {
+            --primary-color: #1a3c5e;
+            --secondary-color: #2c5282;
+            --accent-color: #c53030;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --bg-body: #f7fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 1.75rem;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #9b2c2c;
+            transform: translateY(-2px);
+        }
+
+        /* Context Card */
+        .context-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .context-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .context-card p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Article Cards */
+        .article-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #cbd5e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .topic-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .topic-list span {
+            background: #edf2f7;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Disclaimer */
+        .disclaimer-box {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e0;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            color: #a0aec0;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">PoliceFocus</div>
+            <nav class="nav-links">
+                <a href="#context">人物背景</a>
+                <a href="#topics">社会关注</a>
+                <a href="#discussion">理性讨论</a>
+                <a href="#guidance">公共安全</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>警察张津瑜</h1>
+                <p>聚焦社会热点人物，探讨公共安全与网络舆论的边界。致力于提供客观、理性的信息解读与公共安全教育。</p>
+                <a href="#context" class="hero-btn">深入了解</a>
+            </div>
+        </section>
+
+        <!-- Context Section -->
+        <section id="context" class="section">
+            <div class="container">
+                <div class="context-card">
+                    <h3>人物背景与职业身份</h3>
+                    <p>张津瑜曾是一名人民警察，在公安系统中从事过相关警务工作。在公共讨论中，该人物因个人经历引发了广泛的网络关注。作为曾经的公职人员，其职业身份与个人生活之间的界限一直是社会讨论的焦点之一。</p>
+                    <p>本平台旨在客观梳理相关事件的时间线与背景信息，而非对个人隐私进行过度挖掘。对于涉及个人隐私的信息，我们严格遵循法律法规，保护当事人合法权益。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Topics Section -->
+        <section id="topics" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">社会关注焦点</h2>
+                </div>
+                <div class="grid-3">
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/police1/400/300" alt="网络舆论分析">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">舆论分析</span>
+                            <h3 class="card-title">网络舆论的放大效应与理性看待</h3>
+                            <p class="card-excerpt">在信息传播迅速的互联网时代，个人隐私往往容易被无限放大。我们需要警惕网络暴力和人肉搜索，保持理性思考。</p>
+                            <div class="card-footer">
+                                <span>2023-10-24</span>
+                                <span>阅读 5.2k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/police2/400/300" alt="公职人员行为规范">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">职业规范</span>
+                            <h3 class="card-title">公职人员职业道德与行为边界</h3>
+                            <p class="card-excerpt">公职人员代表着执法者的形象。探讨如何在个人生活中维护公职形象，以及违反职业道德可能带来的法律后果。</p>
+                            <div class="card-footer">
+                                <span>2023-10-22</span>
+                                <span>阅读 4.8k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/police3/400/300" alt="隐私保护法律">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">法律解读</span>
+                            <h3 class="card-title">个人信息保护法与网络隐私</h3>
+                            <p class="card-excerpt">解读《个人信息保护法》中关于隐私权的规定，分析网络环境下个人信息泄露的法律风险及维权途径。</p>
+                            <div class="card-footer">
+                                <span>2023-10-20</span>
+                                <span>阅读 6.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout with Sidebar -->
+        <section id="discussion" class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <div class="section-header">
+                            <h2 class="section-title">深度专题</h2>
+                        </div>
+                        <article class="article-card" style="margin-bottom: 2rem;">
+                            <div class="card-content">
+                                <span class="card-tag">社会观察</span>
+                                <h3 class="card-title">从个案看社会信任危机与重建</h3>
+                                <p class="card-excerpt">通过分析各类社会热点个案，探讨社会信任机制的形成机制以及如何通过法治和道德建设重建社会信任。</p>
+                            </div>
+                        </article>
+                        <article class="article-card" style="margin-bottom: 2rem;">
+                            <div class="card-content">
+                                <span class="card-tag">心理视角</span>
+                                <h3 class="card-title">网络围观心理与群体极化</h3>
+                                <p class="card-excerpt">分析网民在围观热点事件时的心理机制，以及为何网络环境容易导致观点极化和非理性宣泄。</p>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <div class="card-content">
+                                <span class="card-tag">公共安全</span>
+                                <h3 class="card-title">公职人员心理健康与压力管理</h3>
+                                <p class="card-excerpt">关注基层公职人员的心理健康状况，探讨如何在高压工作环境下进行有效的压力疏导。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside>
+                        <h3 class="sidebar-title">相关话题</h3>
+                        <ul class="topic-list">
+                            <li><a href="#">网络暴力法律后果 <span>12</span></a></li>
+                            <li><a href="#">公职人员形象管理 <span>8</span></a></li>
+                            <li><a href="#">隐私权与知情权 <span>15</span></a></li>
+                            <li><a href="#">网络谣言治理 <span>9</span></a></li>
+                            <li><a href="#">社会道德建设 <span>20</span></a></li>
+                            <li><a href="#">网络文明倡议 <span>5</span></a></li>
+                        </ul>
+
+                        <div class="disclaimer-box">
+                            <strong>重要提示：</strong><br>
+                            本站内容仅供资讯参考，旨在引导理性讨论。请勿传播未经证实的信息或进行人身攻击。
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Guidance Section -->
+        <section id="guidance" class="section" style="background-color: #edf2f7;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">公共安全与法治指南</h2>
+                </div>
+                <div class="grid-3">
+                    <div style="background: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">⚖️</div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">尊重法律</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">任何人都应遵守法律法规，公职人员更应成为法治的模范践行者。</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">保护隐私</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">网络不是法外之地，尊重他人隐私是公民的基本素养。</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🧠</div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">理性思考</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">面对网络热点，保持独立思考，不盲从、不跟风。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PoliceFocus</h4>
+                    <p style="color: #cbd5e0; font-size: 0.9rem; line-height: 1.6;">
+                        致力于提供客观、理性的社会热点人物资讯与公共安全教育。我们关注社会现象背后的法治与道德议题。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#context">人物背景</a></li>
+                        <li><a href="#topics">社会关注</a></li>
+                        <li><a href="#discussion">理性讨论</a></li>
+                        <li><a href="#guidance">公共安全</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">法律法规库</a></li>
+                        <li><a href="#">隐私保护指南</a></li>
+                        <li><a href="#">网络文明公约</a></li>
+                        <li><a href="#">举报渠道</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PoliceFocus 资讯平台. All Rights Reserved. 本站内容仅供资讯参考，不构成任何法律建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>

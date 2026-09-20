@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夕颜情书-唯美情感语录与唯美图文故事分享平台</title>
+    <meta name="description" content="夕颜情书是一个专注于唯美情感语录、短篇图文故事与心灵治愈的在线分享平台。在这里，发现触动心弦的文字，记录生活的温柔瞬间，让每一份情感能找到共鸣。">
+    <meta name="keywords" content="夕颜情书,唯美语录,情感故事,治愈系,晚安故事,心灵感悟">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8a8a8a;
+            --accent-color: #d4a373;
+            --bg-color: #fcfbf9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #eee;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --font-serif: "Songti SC", "SimSun", "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-subscribe {
+            padding: 8px 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-subscribe:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(212, 163, 115, 0.15);
+            color: var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-input-group {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .hero-input-group input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .hero-input-group button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .hero-input-group button:hover {
+            background: #c58c5d;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .category-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Featured Stories (Grid) */
+        .featured {
+            padding: 60px 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .story-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .story-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .story-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .story-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .author-name {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .read-more {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #f4f1ea;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .quote-author {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Daily Archives / List */
+        .daily-updates {
+            padding: 60px 0;
+        }
+
+        .update-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .update-item:hover {
+            background: #fafafa;
+        }
+
+        .update-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            width: 100px;
+            flex-shrink: 0;
+            font-family: var(--font-serif);
+        }
+
+        .update-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-family: var(--font-serif);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .hero-input-group {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+            .hero-input-group input, .hero-input-group button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">夕颜<span>情书</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情感语录</a></li>
+                    <li><a href="#">治愈故事</a></li>
+                    <li><a href="#">情感专栏</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-subscribe">订阅更新</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Placeholder for a soft, atmospheric image -->
+            <img src="https://picsum.photos/seed/xiyang/1920/600" alt="夕颜花海" class="hero-bg">
+            <div class="hero-content">
+                <span class="hero-tag">心灵栖息地</span>
+                <h1>把温柔写进信里<br>寄给未知的你</h1>
+                <p>在喧嚣的世界里，寻找一份静谧的情感共鸣。这里有最动人的文字，最治愈的故事，陪你度过每一个长夜。</p>
+                <form class="hero-input-group" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="输入你想寻找的心情或故事主题..." aria-label="搜索主题">
+                    <button type="submit">发送</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories container">
+            <div class="category-grid">
+                <div class="category-card">
+                    <span class="category-icon">✉️</span>
+                    <div class="category-title">情感语录</div>
+                    <div class="category-desc">简短有力，直击内心的文字碎片</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🌙</span>
+                    <div class="category-title">晚安故事</div>
+                    <div class="category-desc">伴你入眠的温柔短篇与童话</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🍂</span>
+                    <div class="category-title">生活随笔</div>
+                    <div class="category-desc">记录平凡日子里的小确幸</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">💌</span>
+                    <div class="category-title">未寄出的信</div>
+                    <div class="category-desc">那些无法当面说出口的爱意</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Stories -->
+        <section class="featured container">
+            <div class="section-header">
+                <h2>精选故事</h2>
+                <p>近期最受欢迎的治愈系内容</p>
+            </div>
+            <div class="story-grid">
+                <!-- Story 1 -->
+                <article class="story-card">
+                    <img src="https://picsum.photos/seed/love1/400/300" alt="故事封面" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span>情感随笔</span>
+                            <span>2023-10-24</span>
+                        </div>
+                        <h3 class="story-title">后来，我们都成了故事里的路人</h3>
+                        <p class="story-excerpt">有些故事没有结局，但正因为没有结局，才给了我们无限的遐想空间。在那个路口，我们挥手告别，从此山高水长...</p>
+                        <div class="story-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">林间风</span>
+                            </div>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story 2 -->
+                <article class="story-card">
+                    <img src="https://picsum.photos/seed/night/400/300" alt="故事封面" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span>晚安故事</span>
+                            <span>2023-10-23</span>
+                        </div>
+                        <h3 class="story-title">贩卖晚安的便利店</h3>
+                        <p class="story-excerpt">在城市的角落，有一家只在深夜营业的便利店。店员是一只不再发光的星星，它负责收集人们一天中最疲惫的时刻...</p>
+                        <div class="story-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">星河</span>
+                            </div>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story 3 -->
+                <article class="story-card">
+                    <img src="https://picsum.photos/seed/rain/400/300" alt="故事封面" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span>情感语录</span>
+                            <span>2023-10-22</span>
+                        </div>
+                        <h3 class="story-title">雨停了，天晴了</h3>
+                        <p class="story-excerpt">所有的等待都是为了更好的相遇。不要因为一时的阴霾而忘记了阳光的味道。保持热爱，奔赴山海。</p>
+                        <div class="story-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">晨曦</span>
+                            </div>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container quote-container">
+                <div class="quote-icon">❝</div>
+                <p class="quote-text">“爱是想要触碰却又收回手，是明明想要在一起却又害怕失去。”</p>
+                <p class="quote-author">—— 《夕颜情书》精选</p>
+            </div>
+        </section>
+
+        <!-- Daily Updates List -->
+        <section class="daily-updates container">
+            <div class="section-header">
+                <h2>每日更新</h2>
+                <p>不错过每一个触动心灵的瞬间</p>
+            </div>
+            <div class="update-list">
+                <a href="#" class="update-item">
+                    <span class="update-date">10月25日</span>
+                    <span class="update-title">致那些正在经历迷茫的你：请相信，一切都是最好的安排</span>
+                </a>
+                <a href="#" class="update-item">
+                    <span class="update-date">10月24日</span>
+                    <span class="update-title">如果爱有声音，那一定是风铃在响</span>
+                </a>
+                <a href="#" class="update-item">
+                    <span class="update-date">10月23日</span>
+                    <span class="update-title">关于孤独：孤独是灵魂的独处，而不是寂寞</span>
+                </a>
+                <a href="#" class="update-item">
+                    <span class="update-date">10月22日</span>
+                    <span class="update-title">旧照片里的夏天，那个回不去的夏天</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" style="padding: 60px 0;">
+            <div class="section-header">
+                <h2>常见问题</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 500; color: var(--text-main);">如何投稿我的故事？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">请点击页面上方的“投稿指南”按钮，查看详细的投稿要求和流程。我们欢迎所有真诚、有温度的文字。</p>
+                </details>
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 500; color: var(--text-main);">订阅更新会收取费用吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">完全免费。我们致力于为读者提供纯净的情感阅读体验，不进行任何商业收费。</p>
+                </details>
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 500; color: var(--text-main);">可以转载内容吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">我们鼓励分享，但请注明出处。如果用于商业用途，请联系我们获取授权。</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>夕颜情书</h3>
+                    <p style="font-size: 0.9rem; color: #999; line-height: 1.8;">一个专注于唯美情感语录与治愈系故事分享的平台。用文字温暖每一个孤独的灵魂。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>栏目导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">情感语录</a></li>
+                        <li><a href="#">晚安故事</a></li>
+                        <li><a href="#">情感专栏</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">联系作者</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">友情链接</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <p style="font-size: 0.9rem; color: #999;">微信号：XiyangLoveLetter</p>
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 10px;">邮箱：contact@xiyang.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 夕颜情书. All Rights Reserved. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>

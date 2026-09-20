@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="优质rb攻略系统芙芙 - 全面解析游戏攻略、系统机制、角色养成与实战技巧，为您提供最实用的游戏指南与策略分析。">
+    <meta name="keywords" content="优质rb攻略系统芙芙,rb攻略系统,芙芙,游戏攻略,角色养成">
+    <title>优质rb攻略系统芙芙 - 角色养成与实战策略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-secondary: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: var(--bg-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.8);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 0.8rem;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: rgba(108, 92, 231, 0.1);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 0.8rem;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #ff7675; color: white; }
+        .rank-list li:nth-child(2) .rank-num { background: #fab1a0; color: white; }
+        .rank-list li:nth-child(3) .rank-num { background: #ffeaa7; color: #d35400; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .rank-score {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Guide Content Styles */
+        .guide-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .guide-step::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 50px;
+            bottom: -2rem;
+            width: 2px;
+            background: #eee;
+            z-index: 0;
+        }
+
+        .guide-step:last-child::after {
+            display: none;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .highlight-box {
+            background: #f0f3ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            display: none;
+            padding-left: 1rem;
+            border-left: 3px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 3rem 1.5rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #636e72;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-step {
+                flex-direction: column;
+            }
+
+            .guide-step::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <span>优质rb攻略系统芙芙</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#guide">核心攻略</a></li>
+                <li><a href="#build">阵容搭配</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">🔍 搜索攻略</button>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>解锁最强战斗力<br>全方位解析优质rb攻略系统芙芙</h1>
+            <p>从基础机制到高阶实战，深度剖析芙芙的核心玩法与最优养成路线，助您在游戏中轻松登顶。</p>
+            <div class="cta-group">
+                <a href="#guide" class="btn btn-primary">开始阅读</a>
+                <a href="#build" class="btn btn-outline">查看阵容</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Intro Section -->
+            <section class="guide-section">
+                <div class="section-title">
+                    <h2>芙芙角色与系统概述</h2>
+                </div>
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                    在“优质rb攻略系统芙芙”中，芙芙作为核心辅助与系统载体，承担着资源调度、状态增幅以及战斗节奏控制的关键作用。本攻略旨在帮助玩家理解其底层逻辑，最大化利用其机制优势。
+                </p>
+                <div class="highlight-box">
+                    <strong>核心定位：</strong> 群体增益、续航保障、技能联动。
+                </div>
+            </section>
+
+            <!-- Step by Step Guide -->
+            <section id="guide" class="guide-section">
+                <div class="section-title">
+                    <h2>芙芙养成与实战指南</h2>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+                
+                <div class="guide-step">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h3>技能加点优先级</h3>
+                        <p>芙芙的技能体系通常分为主动技能、被动技能与终极技能。建议优先将资源投入被动技能，以提升基础属性和生存能力。主动技能建议点至等级上限，以保证核心输出循环的流畅性。终极技能需在资源允许的情况下尽快解锁，以应对高难副本。</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h3>装备与羁绊选择</h3>
+                        <p>选择装备时应重点关注“生命值”、“防御力”及“技能冷却缩减”属性。在羁绊搭配上，优先激活与芙芙技能相辅相成的角色组合，例如与具备高爆发能力的输出角色组队，可以形成“增益-输出”的完美闭环。</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h3>实战操作技巧</h3>
+                        <p>在战斗中，芙芙的站位至关重要。应将其置于队伍的后排或侧翼，避免直接承受敌方集火。合理利用芙芙的护盾或减伤技能，可以在关键时刻为团队争取宝贵的输出时间。注意观察敌方技能前摇，及时释放控制技能打断关键节奏。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Articles Grid -->
+            <section>
+                <div class="section-title">
+                    <h2>热门攻略专题</h2>
+                    <a href="#">更多专题 &rarr;</a>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/rb1/400/250" alt="芙芙高阶技巧" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">技巧</span>
+                            <h3 class="card-title">芙芙技能连招详解</h3>
+                            <p class="card-desc">掌握3段连招释放时机，提升30%团队生存率。</p>
+                            <div class="card-meta">
+                                <span>阅读: 1.2w</span>
+                                <span>更新: 3天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/rb2/400/250" alt="资源管理" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">资源</span>
+                            <h3 class="card-title">芙芙养成资源分配表</h3>
+                            <p class="card-desc">零氪与微氪玩家最优资源规划方案。</p>
+                            <div class="card-meta">
+                                <span>阅读: 8.5k</span>
+                                <span>更新: 1周前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/rb3/400/250" alt="PVP阵容" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">PVP</span>
+                            <h3 class="card-title">芙芙PVP克制阵容</h3>
+                            <p class="card-desc">针对主流阵容的芙芙应对策略与反制思路。</p>
+                            <div class="card-meta">
+                                <span>阅读: 5.6k</span>
+                                <span>更新: 2天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Widget: Top Characters -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">芙芙推荐角色榜</h3>
+                <ul class="rank-list">
+                    <li>
+                        <span class="rank-num">1</span>
+                        <div class="rank-info">
+                            <div class="rank-name">炽焰·赛文</div>
+                            <div class="rank-score">协同加成: SSS</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">2</span>
+                        <div class="rank-info">
+                            <div class="rank-name">寒冰·艾莉</div>
+                            <div class="rank-score">协同加成: SS</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">3</span>
+                        <div class="rank-info">
+                            <div class="rank-name">暗影·凯恩</div>
+                            <div class="rank-score">协同加成: SS</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">4</span>
+                        <div class="rank-info">
+                            <div class="rank-name">神圣·露娜</div>
+                            <div class="rank-score">协同加成: S</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">5</span>
+                        <div class="rank-info">
+                            <div class="rank-name">雷霆·托尔</div>
+                            <div class="rank-score">协同加成: S</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget: FAQ -->
+            <div class="sidebar-widget" id="faq">
+                <h3 class="widget-title">常见问题解答</h3>
+                <div class="faq-item">
+                    <div class="faq-question">芙芙在前期是否重要？ <span>+</span></div>
+                    <div class="faq-answer">是的，芙芙的辅助能力在前期副本中能显著降低通关难度，建议尽早解锁。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">芙芙的装备去哪刷？ <span>+</span></div>
+                    <div class="faq-answer">建议优先挑战“试炼塔”和“深渊副本”，这两个地方掉落核心装备的概率较高。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">芙芙被控制了怎么办？ <span>+</span></div>
+                    <div class="faq-answer">建议为芙芙装备“净化”类饰品，或者在阵容中搭配具备解控能力的队友。</div>
+                </div>
+            </div>
+
+            <!-- Widget: Ad Placeholder -->
+            <div class="sidebar-widget" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center; min-height: 250px; color: #666; font-size: 0.9rem;">
+                广告位
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于优质rb攻略系统芙芙</h4>
+            <p style="font-size: 0.9rem; color: #b2bec3;">本站致力于提供最全面、最及时的优质rb攻略系统芙芙相关资讯，帮助玩家优化游戏体验。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">游戏官网</a></li>
+                <li><a href="#">玩家社区</a></li>
+                <li><a href="#">新手入门</a></li>
+                <li><a href="#">活动中心</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助支持</h4>
+            <ul>
+                <li><a href="#">联系管理员</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">免责声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 优质rb攻略系统芙芙. All Rights Reserved. 仅供玩家交流参考使用.
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+  </html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛋糕店老板娘 - 治愈系甜点与烘焙美学指南</title>
+    <meta name="description" content="探索蛋糕店老板娘的烘焙美学与甜点哲学。提供精选蛋糕食谱、开店经验分享、烘焙工具测评及甜品店探店指南，帮助您发现生活中的甜蜜与治愈。">
+    <meta name="keywords" content="蛋糕店老板娘,烘焙教程,甜品制作,开店经验,甜点美学">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d48c7c;
+            --primary-hover: #c07565;
+            --secondary-color: #f8e8e3;
+            --text-main: #4a4a4a;
+            --text-light: #888888;
+            --bg-body: #fdfbf9;
+            --bg-card: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(212, 140, 124, 0.1);
+            --shadow-md: 0 8px 24px rgba(212, 140, 124, 0.15);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .header-cta:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fff0eb 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 200px 200px 20px 20px;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--bg-body);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Recipes Section */
+        .recipes {
+            background-color: #faf8f6;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s;
+        }
+
+        .recipe-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .recipe-img {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+        }
+
+        .recipe-card:hover .recipe-img img {
+            transform: scale(1.05);
+        }
+
+        .recipe-content {
+            padding: 24px;
+        }
+
+        .recipe-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .recipe-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .recipe-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Shop/Products Preview */
+        .shop-preview {
+            background-color: white;
+        }
+
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .shop-main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .shop-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 250px;
+            group: cursor;
+        }
+
+        .shop-item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .shop-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: white;
+        }
+
+        .shop-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .shop-overlay .price {
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .shop-sidebar {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: var(--radius);
+            height: fit-content;
+        }
+
+        .shop-sidebar h3 {
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+            padding-bottom: 15px;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-list span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #faf8f6;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d2d2d;
+            color: #ccc;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C10.8954 2 10 2.89543 10 4V7H14V4C14 2.89543 13.1046 2 12 2Z" fill="#d48c7c"/>
+                    <path d="M7 9V7C7 5.34315 8.34315 4 10 4H14C15.6569 4 17 5.34315 17 7V9H22V22H2V9H7Z" fill="#d48c7c"/>
+                </svg>
+                <span>甜心工坊</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#recipes">烘焙食谱</a></li>
+                    <li><a href="#philosophy">店主心语</a></li>
+                    <li><a href="#shop">甜点美学</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="header-cta">预约体验</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>把生活揉进面团里，<br>做一名<span class="highlight">蛋糕店老板娘</span></h1>
+                    <p>在这里，每一颗糖霜都藏着故事，每一块蛋糕都代表着对生活的热爱。分享开店的真实经验、治愈系烘焙技巧，以及那些藏在甜味里的温柔瞬间。</p>
+                    <div class="hero-buttons">
+                        <a href="#recipes" class="btn btn-primary">开始烘焙</a>
+                        <a href="#philosophy" class="btn btn-outline">了解故事</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/cakebaker/600/500" alt="蛋糕店老板娘在制作蛋糕">
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section-padding philosophy">
+            <div class="container">
+                <div class="section-header">
+                    <h2>烘焙不仅是手艺，更是生活哲学</h2>
+                    <p>作为一名深耕烘焙行业的蛋糕店老板娘，我始终相信甜点具有治愈人心的力量。</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>严选天然原料</h3>
+                        <p>坚持使用进口黄油、鲜奶油和天然香草，拒绝反式脂肪酸，让健康与美味同行。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>视觉与味觉的双重享受</h3>
+                        <p>每一款甜点都经过精心设计，不仅在口感上追求极致，在摆盘上也力求如艺术品般精致。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💝</div>
+                        <h3>传递温暖与爱</h3>
+                        <p>无论是生日庆典还是日常下午茶，我们都希望用这份甜蜜为您的生活增添一抹亮色。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipes Section -->
+        <section id="recipes" class="section-padding recipes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>新手也能上手的治愈食谱</h2>
+                    <p>精选适合家庭制作的经典甜点，步骤清晰，简单易学。</p>
+                </div>
+                <div class="recipe-grid">
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/cupcake/400/300" alt="海盐焦糖海盐芝士蛋糕">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">入门级</span>
+                            <h3>海盐芝士蛋糕</h3>
+                            <div class="recipe-meta">
+                                <span>⏱ 60分钟</span>
+                                <span>🔥 难度：⭐⭐</span>
+                            </div>
+                            <p class="recipe-desc">口感绵密，带有淡淡的咸味，是初学者的最佳选择。不需要烤箱也能制作出完美的蛋糕底。</p>
+                            <a href="#" class="read-more">查看食谱 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/mochi/400/300" alt="手作草莓大福">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">手作</span>
+                            <h3>手作草莓大福</h3>
+                            <div class="recipe-meta">
+                                <span>⏱ 45分钟</span>
+                                <span>🔥 难度：⭐⭐⭐</span>
+                            </div>
+                            <p class="recipe-desc">Q弹的外皮包裹着新鲜草莓，奶香浓郁，是夏季最受欢迎的清爽甜点。</p>
+                            <a href="#" class="read-more">查看食谱 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/tart/400/300" alt="伯爵红茶塔">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">进阶</span>
+                            <h3>伯爵红茶塔</h3>
+                            <div class="recipe-meta">
+                                <span>⏱ 90分钟</span>
+                                <span>🔥 难度：⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="recipe-desc">酥脆的塔皮搭配香浓的伯爵红茶卡仕达酱，茶香与奶香完美融合，层次丰富。</p>
+                            <a href="#" class="read-more">查看食谱 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/cookie/400/300" alt="经典黄油曲奇">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">零失败</span>
+                            <h3>经典黄油曲奇</h3>
+                            <div class="recipe-meta">
+                                <span>⏱ 40分钟</span>
+                                <span>🔥 难度：⭐</span>
+                            </div>
+                            <p class="recipe-desc">简单的食材，却能做出酥掉渣的口感。适合作为伴手礼或下午茶点。</p>
+                            <a href="#" class="read-more">查看食谱 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="section-padding shop-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选甜点美学</h2>
+                    <p>每一款都是老板娘亲手制作的艺术品。</p>
+                </div>
+                <div class="shop-layout">
+                    <div class="shop-main">
+                        <div class="shop-item">
+                            <img src="https://picsum.photos/seed/cake1/500/350" alt="生日庆典蛋糕">
+                            <div class="shop-overlay">
+                                <h4>缤纷生日庆典</h4>
+                                <span class="price">¥ 388</span>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <img src="https://picsum.photos/seed/cake2/500/350" alt="法式慕斯拼盘">
+                            <div class="shop-overlay">
+                                <h4>法式慕斯拼盘</h4>
+                                <span class="price">¥ 128</span>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <img src="https://picsum.photos/seed/cake3/500/350" alt="季节限定提拉米苏">
+                            <div class="shop-overlay">
+                                <h4>季节限定提拉米苏</h4>
+                                <span class="price">¥ 98</span>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <img src="https://picsum.photos/seed/cake4/500/350" alt="手工巧克力">
+                            <div class="shop-overlay">
+                                <h4>手工巧克力礼盒</h4>
+                                <span class="price">¥ 268</span>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="shop-sidebar">
+                        <h3>热门分类</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#">慕斯系列 &rarr;</a><span>新品上市</span></li>
+                            <li><a href="#">芝士蛋糕 &rarr;</a><span>经典畅销</span></li>
+                            <li><a href="#">法式塔类 &rarr;</a><span>酥脆口感</span></li>
+                            <li><a href="#">季节限定 &rarr;</a><span>限时供应</span></li>
+                            <li><a href="#">伴手礼盒 &rarr;</a><span>精美包装</span></li>
+                        </ul>
+                        <div style="margin-top: 30px; text-align: center;">
+                            <a href="#" class="btn btn-primary" style="width: 100%;">浏览全部商品</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>烘焙与开店常见问题</h2>
+                    <p>关于甜点制作、开店经营以及选材的疑问解答。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">新手做蛋糕最容易失败的地方是哪里？ <span>+</span></div>
+                        <div class="faq-answer">新手最容易忽略的是材料的精确称量和面团的打发程度。尤其是黄油和鸡蛋的温度，以及蛋白打发的稳定性，直接决定了成品的成败。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">作为蛋糕店老板娘，如何保持甜品的新鲜度？ <span>+</span></div>
+                        <div class="faq-answer">我们坚持每日现做，严格控制库存。对于蛋糕，建议在购买后的24-48小时内食用以获得最佳口感，并在包装上标注生产日期。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">在家制作奶油蛋糕需要什么设备？ <span>+</span></div>
+                        <div class="faq-answer">基础设备包括电子秤、打蛋器（手动或电动）、刮刀、裱花袋和裱花嘴。进阶一点的话，一个烤箱是必不可少的。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>甜心工坊</h4>
+                    <p>致力于为每一位顾客提供高品质、有温度的甜点体验。我们相信，好的甜点能让平凡的日子闪闪发光。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#recipes">烘焙食谱</a></li>
+                        <li><a href="#shop">在线商城</a></li>
+                        <li><a href="#philosophy">关于我们</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>📞 400-123-4567</li>
+                        <li>📧 hello@sweetheart.com</li>
+                        <li>📍 上海市静安区甜心路88号</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅更新</h4>
+                    <p>订阅我们的邮件，获取最新食谱和优惠信息。</p>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="email" placeholder="您的邮箱" style="padding: 10px; border: none; border-radius: 4px; flex: 1;">
+                        <button style="padding: 10px 15px; background: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 甜心工坊 Sweetheart Bakery. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('span');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+  </html>

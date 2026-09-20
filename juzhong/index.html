@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剧种-中国影视剧类型分类大全与鉴赏指南</title>
+    <meta name="description" content="本站提供全面的中国影视剧种分类大全，涵盖古装剧、都市剧、悬疑剧、年代剧、武侠剧等主流剧种。详细介绍各剧种的特点、代表作品及观看指南，助您精准找到喜欢的影视内容。">
+    <meta name="keywords" content="剧种,影视类型,古装剧,都市剧,悬疑剧,年代剧,电视剧分类,影视鉴赏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d32f2f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 6px;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--accent-color);
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .grid-4, .grid-3 { grid-template-columns: 1fr; }
+            nav { display: none; } /* Simplified mobile nav */
+            .header-inner { justify-content: center; }
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #e0e0e0;
+        }
+
+        .card-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        /* Featured Grid */
+        .featured-card {
+            grid-column: span 2;
+            grid-row: span 2;
+            position: relative;
+        }
+
+        .featured-card .card-img {
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .featured-card .card-body {
+            background: rgba(255,255,255,0.95);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        /* Info/Definition Section */
+        .definition-box {
+            background: white;
+            padding: 32px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            border: 1px solid #eee;
+        }
+
+        .definition-box h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .definition-content p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        /* Comparison Table */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 48px 0 24px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">剧种<span>百科</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#types">类型大全</a></li>
+                    <li><a href="#features">特点解析</a></li>
+                    <li><a href="#ranking">热门排行</a></li>
+                    <li><a href="#guide">观看指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索剧种...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索中国影视剧种</h1>
+                <p>从古装权谋到现代悬疑，全面解析中国电视剧的主要类型。了解不同剧种的叙事风格、历史背景及代表作品，助您精准定位心仪内容。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Intro Definition -->
+            <section class="definition-box" id="guide">
+                <h2>什么是“剧种”？</h2>
+                <div class="definition-content">
+                    <p>在影视艺术中，“剧种”通常指根据题材内容、叙事风格、时代背景或情感基调划分的电视剧类别。它不仅是分类标签，更是一种文化符号和审美习惯的集合。中国电视剧市场庞大，经过数十年的发展，已经形成了成熟且多元的剧种体系，满足不同受众群体的观看需求。</p>
+                    <p>常见的剧种划分方式包括按时代（古装、年代、现代）、按题材（都市、悬疑、武侠、玄幻）、按情感色彩（爱情、家庭、喜剧）以及按制作风格（正剧、轻喜剧、悬疑剧）等。了解这些分类，有助于观众快速筛选内容，也便于创作者在创作初期明确目标受众。</p>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <section id="types">
+                <div class="section-header">
+                    <h2 class="section-title">主流剧种分类</h2>
+                    <a href="#" class="section-more">查看全部分类 →</a>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/ancient/400/250" alt="古装剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">古装剧</span>
+                            <h3 class="card-title">古装剧</h3>
+                            <p class="card-desc">以中国古代历史或传说为背景，展现宫廷斗争、江湖侠义或家国情怀的剧集，注重服饰、礼仪与历史考据。</p>
+                            <div class="card-meta">
+                                <span>热度: 高</span>
+                                <span>代表作：《甄嬛传》《琅琊榜》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/modern/400/250" alt="都市剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">都市剧</span>
+                            <h3 class="card-title">都市剧</h3>
+                            <p class="card-desc">反映当代城市生活、职场竞争、情感纠葛的剧集，贴近现实，关注现代人的心理状态与生活状态。</p>
+                            <div class="card-meta">
+                                <span>热度: 极高</span>
+                                <span>代表作：《三十而已》《狂飙》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/suspense/400/250" alt="悬疑剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">悬疑剧</span>
+                            <h3 class="card-title">悬疑剧</h3>
+                            <p class="card-desc">以推理、破案、解谜为核心，注重逻辑构建与氛围营造，常探讨人性阴暗面或社会热点问题。</p>
+                            <div class="card-meta">
+                                <span>热度: 上升中</span>
+                                <span>代表作：《白夜追凶》《隐秘的角落》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/history/400/250" alt="年代剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">年代剧</span>
+                            <h3 class="card-title">年代剧</h3>
+                            <p class="card-desc">以特定历史时期（如民国、抗战、建国初期）为背景，记录时代变迁与人物命运沉浮。</p>
+                            <div class="card-meta">
+                                <span>热度: 稳定</span>
+                                <span>代表作：《人世间》《大江大河》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wuxia/400/250" alt="武侠剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">武侠剧</span>
+                            <h3 class="card-title">武侠剧</h3>
+                            <p class="card-desc">以武侠世界为舞台，讲述侠客义行、门派争斗及江湖恩怨，强调侠义精神与武术技艺。</p>
+                            <div class="card-meta">
+                                <span>热度: 经典</span>
+                                <span>代表作：《天龙八部》《鹿鼎记》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/tv/400/250" alt="家庭剧封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">家庭剧</span>
+                            <h3 class="card-title">家庭剧</h3>
+                            <p class="card-desc">聚焦家庭成员关系、亲子教育、婆媳矛盾等日常话题，具有极强的代入感和生活气息。</p>
+                            <div class="card-meta">
+                                <span>热度: 持续</span>
+                                <span>代表作：《以家人之名》</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Featured / Featured Content -->
+            <section id="ranking">
+                <div class="section-header">
+                    <h2 class="section-title">年度热门剧种趋势</h2>
+                </div>
+                <div class="grid-4">
+                    <article class="card featured-card">
+                        <img src="https://picsum.photos/seed/scifi/600/600" alt="科幻剧" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">新兴趋势</span>
+                            <h3 class="card-title">科幻剧：未来已来</h3>
+                            <p class="card-desc">随着技术发展，科幻题材逐渐成为主流。从硬核科幻到软科幻，探讨人工智能、外星文明及人类未来的剧集越来越受到年轻观众的追捧。</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/crime/400/250" alt="犯罪剧" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">犯罪</span>
+                            <h3 class="card-title">犯罪剧</h3>
+                            <p class="card-desc">深入剖析犯罪心理与社会法制，具有极强的警示作用和观赏性。</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/romance/400/250" alt="爱情剧" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">爱情</span>
+                            <h3 class="card-title">爱情剧</h3>
+                            <p class="card-desc">以男女情感为主线，涵盖甜宠、虐恋、校园等细分类型，是女性观众群体最关注的剧种之一。</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/fantasy/400/250" alt="奇幻剧" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">奇幻</span>
+                            <h3 class="card-title">奇幻剧</h3>
+                            <p class="card-desc">包含玄幻、仙侠、灵异等元素，构建超脱现实的想象世界，视觉特效要求较高。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Detailed Comparison Table -->
+            <section id="features">
+                <div class="section-header">
+                    <h2 class="section-title">剧种特征对比</h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>剧种名称</th>
+                                <th>核心特点</th>
+                                <th>主要受众</th>
+                                <th>代表元素</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>古装剧</strong></td>
+                                <td>历史背景，权谋斗争，服饰考究</td>
+                                <td>全年龄段，历史爱好者</td>
+                                <td>皇帝、丞相、江湖、宫斗</td>
+                            </tr>
+                            <tr>
+                                <td><strong>都市剧</strong></td>
+                                <td>现代生活，职场奋斗，情感纠葛</td>
+                                <td>城市白领，青年群体</td>
+                                <td>CBD、公寓、职场、相亲</td>
+                            </tr>
+                            <tr>
+                                <td><strong>悬疑剧</strong></td>
+                                <td>逻辑推理，心理博弈，反转剧情</td>
+                                <td>推理迷，年轻观众</td>
+                                <td>密室、密码、侦探、尸体</td>
+                            </tr>
+                            <tr>
+                                <td><strong>年代剧</strong></td>
+                                <td>时代印记，社会变革，历史厚重感</td>
+                                <td>中年及以上观众</td>
+                                <td>粮票、自行车、工厂、知青</td>
+                            </tr>
+                            <tr>
+                                <td><strong>家庭剧</strong></td>
+                                <td>亲情伦理，邻里关系，生活琐事</td>
+                                <td>家庭主妇，亲子家庭</td>
+                                <td>做饭、孩子、老人、装修</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于剧种百科</h4>
+                    <p style="font-size: 14px; line-height: 1.6;">我们致力于打造最全面的中国影视剧种分类数据库，为观众提供精准的内容导航，为创作者提供行业参考。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">古装剧专区</a></li>
+                        <li><a href="#">都市剧专区</a></li>
+                        <li><a href="#">悬疑剧专区</a></li>
+                        <li><a href="#">热门排行榜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>观看指南</h4>
+                    <ul>
+                        <li><a href="#">如何选择剧种</a></li>
+                        <li><a href="#">经典剧集推荐</a></li>
+                        <li><a href="#">影视制作解析</a></li>
+                        <li><a href="#">常见问题解答</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>合作邮箱: contact@juzhong.com</li>
+                        <li>投稿建议: submit@juzhong.com</li>
+                        <li>关注我们: 微信/微博/抖音</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 剧种百科网 版权所有 | 仅供学习交流使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
